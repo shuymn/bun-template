@@ -1,0 +1,12 @@
+pre-commit:
+  commands:
+    lint:
+      run: bun run lint
+    fmt:
+      run: bun run fmt
+      stage_fixed: true
+
+commit-msg:
+  commands:
+    commitlint:
+      run: bunx commitlint --edit {1}
