@@ -1,12 +1,28 @@
-pre-commit:
-  commands:
-    lint:
-      run: bun run lint
-    fmt:
-      run: bun run fmt
-      stage_fixed: true
+colors: true
+no_tty: false
 
 commit-msg:
   commands:
     commitlint:
       run: bunx commitlint --edit {1}
+
+pre-commit:
+  parallel: false
+  piped: true
+
+  commands:
+    lint:
+      run: bun run lint --fix .
+      stage_fixed: true
+    fmt:
+      run: bun run fmt
+      stage_fixed: true
+    typecheck:
+      run: bun run typecheck
+    test:
+      run: bun test
+      glob: "**/*.{ts,tsx}"
+
+  skip:
+    - merge: true
+    - rebase: true
