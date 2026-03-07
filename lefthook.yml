@@ -22,6 +22,8 @@ pre-commit:
     test:
       run: bun test
       glob: "**/*.{ts,tsx}"
+    gitleaks:
+      run: gitleaks protect --staged
 
   skip:
     - merge: true
