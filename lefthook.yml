@@ -12,7 +12,7 @@ pre-commit:
 
   commands:
     lint:
-      run: bun run lint --fix .
+      run: bun run lint:fix
       stage_fixed: true
     fmt:
       run: bun run fmt
