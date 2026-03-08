@@ -8,6 +8,7 @@ Minimal Bun template with:
 - Lefthook automation for `pre-commit`, `pre-push`, and `commit-msg`
 - Shared GitHub Actions workflows from [`shuymn/github-actions`](https://github.com/shuymn/github-actions)
 - Starter docs for repository tooling, testing, and review expectations
+<!-- template:end -->
 
 ## Local Setup
 
@@ -31,7 +32,6 @@ If `new-package-name` is omitted, the script derives it from the `origin` remote
 3. Rewrite this README with your project's purpose, setup, development workflow, and release information.
 4. Review [`AGENTS.md`](AGENTS.md) and [`docs/`](docs/) and keep only the guidance you want in this repository.
 5. Run `bun run check` before your first project-specific commit.
-<!-- template:end -->
 
 This repository was initialized from a Bun project template.
 
