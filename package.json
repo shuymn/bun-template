@@ -7,10 +7,12 @@
     "postinstall": "lefthook install",
     "lint": "bunx biome lint .",
     "lint:fix": "bunx biome lint --fix .",
-    "fmt": "bunx biome format --fix .",
+    "fmt:fix": "bunx biome format --write .",
     "fmt:check": "bunx biome format .",
     "typecheck": "bunx tsc --noEmit",
-    "check": "bun run lint && bun run fmt:check && bun run typecheck"
+    "test": "bun test --pass-with-no-tests",
+    "check:fast": "bun run fmt:check && bun run lint && bun run typecheck",
+    "check": "bun run check:fast && bun run test"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.6",

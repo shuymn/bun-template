@@ -16,15 +16,19 @@
 - Use `bunx <tool>` for local CLIs (`biome`, `commitlint`, `tsc`).
 - Bun loads `.env` automatically; do not add `dotenv`.
 - Prefer `rg` and `rg --files` for searching text/files.
+- Keep `package.json` scripts as the single entrypoint for local commands, hooks, and CI.
 
 ## Required Checks
 - After code changes, run `bun run check`.
+- Keep fast local verification green with `bun run check:fast`.
 - Keep Biome clean with `bun run lint` and `bun run fmt:check`.
 - Keep type safety green with `bun run typecheck`.
+- Keep tests green with `bun run test`.
 - Never skip a failing check; fix the underlying issue.
 
 ## Git and Hooks
-- Respect lefthook hooks (`pre-commit`, `commit-msg`).
+- Respect lefthook hooks (`pre-commit`, `pre-push`, `commit-msg`).
+- `pre-commit` owns auto-fixes and lightweight verification; `pre-push` owns full verification via `bun run check`.
 - Commit messages must pass commitlint (Conventional Commits).
 - Keep commits and pull requests focused and small.
 

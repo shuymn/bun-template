@@ -1,5 +1,13 @@
-colors: true
-no_tty: false
+assert_lefthook_installed: true
+glob_matcher: doublestar
+no_tty: true
+skip_lfs: true
+
+output:
+  - summary
+  - failure
+  - execution
+  - execution_out
 
 commit-msg:
   commands:
@@ -11,20 +19,31 @@ pre-commit:
   piped: true
 
   commands:
+    fmt:
+      tags: [format]
+      glob: "**/*.{js,jsx,ts,tsx,json,jsonc,md,yml,yaml}"
+      run: bun run fmt:fix
+      stage_fixed: true
     lint:
+      tags: [lint]
+      glob: "**/*.{js,jsx,ts,tsx,json,jsonc}"
       run: bun run lint:fix
       stage_fixed: true
-    fmt:
-      run: bun run fmt
-      stage_fixed: true
     typecheck:
+      tags: [types]
       run: bun run typecheck
-    test:
-      run: bun test
-      glob: "**/*.{ts,tsx}"
     gitleaks:
-      run: gitleaks protect --staged
+      tags: [security]
+      run: gitleaks git --pre-commit --staged --redact --no-banner --verbose
 
   skip:
     - merge: true
     - rebase: true
+
+pre-push:
+  piped: true
+
+  commands:
+    checks:
+      tags: [format, lint, types, test]
+      run: bun run check
