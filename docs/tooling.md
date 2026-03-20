@@ -1,7 +1,5 @@
 # Tooling Pipeline
 
-Use this file only when the task explicitly points to repository-specific tooling flow.
-
 ## Source of Truth
 
 - Use `bun run <script>` as the single interface for local development, hooks, and CI.

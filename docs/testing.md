@@ -1,7 +1,5 @@
 # Testing Conventions
 
-Use this file only when the task explicitly points to repository-specific test rules.
-
 ## Running Tests
 
 - Use `bun run test` for the full test suite.

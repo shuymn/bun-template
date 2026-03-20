@@ -32,6 +32,12 @@
 - Commit messages must pass commitlint (Conventional Commits).
 - Keep commits and pull requests focused and small.
 
+## Documentation
+
+- `docs/review.md` — review conventions and checklist viewpoints.
+- `docs/testing.md` — test conventions and running tests.
+- `docs/tooling.md` — verification pipeline and adding tools.
+
 ## Template Scope
 - This template provides only development tooling scaffolding.
 - Feature architecture and domain-specific design docs are intentionally out of scope.

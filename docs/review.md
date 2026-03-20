@@ -1,7 +1,5 @@
 # Review Guide
 
-Use this file only for code review or when the user explicitly asks for broader review conventions.
-
 Prioritize behavior, safety, regressions, and missing verification over style.
 
 | Viewpoint | Check | Red Flags |
