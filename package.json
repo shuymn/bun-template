@@ -15,7 +15,7 @@
     "check": "bun run check:fast && bun run test"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.6",
+    "@biomejs/biome": "2.4.7",
     "@commitlint/cli": "20.5.0",
     "@commitlint/config-conventional": "20.5.0",
     "@tsconfig/bun": "1.0.10",
