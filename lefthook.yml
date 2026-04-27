@@ -32,9 +32,9 @@ pre-commit:
     typecheck:
       tags: [types]
       run: bun run typecheck
-    gitleaks:
+    betterleaks:
       tags: [security]
-      run: gitleaks git --pre-commit --staged --redact --no-banner --verbose
+      run: betterleaks git --pre-commit --staged --redact --no-banner --verbose
 
   skip:
     - merge: true
